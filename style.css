@@ -1,0 +1,80 @@
+/* * {
+    outline: red solid 1px;
+}  */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eeee;
+}
+
+/* START OF CODE EDITOR */
+
+.code-editor {
+    display: flex;
+    align-items: stretch;
+    font-family: monospace;
+    width: 50%;
+    height: 400PX;
+    overflow: auto;
+}
+
+.line-numbers {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    color: #999;
+}
+
+.line-number {
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+#source {
+    flex-grow: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: monospace;
+}
+.nav-header {
+    display:flex;
+    gap: 10px;
+    align-items: center;
+}
+.header-sub {
+    display: flex;
+    /* gap: 33%; */
+    justify-content: space-between;
+    margin: 0 1.5%;
+}
+.sel-lang {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#lang {
+    height: fit-content;
+}
+.editor-out {
+    display: flex;
+}
+#output {
+    width: 50%;
+    resize: none;
+}
+#input {
+    margin-left: 1.2%;
+    width: 48.5%;
+    border: none;
+    resize: none;
+    height: 120px;
+}
+.input-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn-run {
+    margin-right: 5%;
+    height: fit-content;
+}
