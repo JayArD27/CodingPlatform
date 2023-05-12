@@ -4,13 +4,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Compiler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="code-solid.svg">
 </head>
 
 <body style="background-color: #eee; font-family: monospace; margin: 8px;" >
     <h2>Coddie Playground</h2>
 
     <h4>Source Code</h4>
-    <textarea id="source" style="width: calc(50% - 8px); height: 40%; resize: vertical;">
+    <!-- <textarea id="source" style="width: calc(50% - 8px); height: 40%; resize: vertical;"> -->
+    <div class="code-editor">
+        <div class="line-numbers"></div>
+        <textarea id="source" placeholder="Write your code here..."></textarea>
+    </div>
 
 </textarea>
 
@@ -146,6 +152,21 @@
         });
 
         $("#source").focus();
+
+        //code editor
+        const codeEditor = document.getElementById('source');
+        const lineNumbers = document.querySelector('.line-numbers');
+
+        function updateLineNumbers() {
+        const lines = codeEditor.value.split('\n');
+        const lineNumbersHTML = lines.map((_, index) => `<div class="line-number">${index + 1}</div>`).join('');
+        lineNumbers.innerHTML = lineNumbersHTML;
+        }
+
+        codeEditor.addEventListener('input', updateLineNumbers);
+
+        // Initial line numbers update
+        updateLineNumbers();
     </script>
 </body>
 </html>
