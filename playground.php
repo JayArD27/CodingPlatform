@@ -3,21 +3,27 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Compiler</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Coddie -Code Playground</title>
+    <link rel="stylesheet" href="styledarkmode.css">
     <link rel="icon" href="code-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body>
     <nav class="nav-header">
-        <a href="http://"><</a>
-        <h1>CODDIE - Code Playground</h1>
+        <div class="logo">
+            <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
+            <h1>CODDIE - CODE PLAYGROUND</h1>
+        </div>
+        <button id="dark-mode-toggle">
+            <i class="fas fa-sun"></i> 
+            <i class="fas fa-moon"></i>
+        </button>
     </nav>
     <div class="header-sub">
         <h4>Source Code</h4>
         <div class="sel-lang">
         <h4>Language</h4>
             <select id="lang">
-                <option>C#</option>
                 <option selected>C++</option>
                 <option>C</option>
                 <option>Java</option>
