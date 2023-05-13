@@ -52,7 +52,6 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
                 error: errorHandler
             });
         }
-
         function run() {
             $("#run").prop("disabled", true);
             $("#output").val("COMPLING...");
@@ -128,9 +127,4 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
         darkModeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             darkModeToggle.classList.toggle('light-mode');
-
-            // Toggle the icons
-            // const icons = darkModeToggle.getElementsByTagName('i');
-            // icons[0].classList.toggle('hidden');
-            // icons[1].classList.toggle('hidden');
         });
