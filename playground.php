@@ -3,7 +3,7 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coddie -Code Playground</title>
+    <title>Coddie - Code Playground</title>
     <link rel="stylesheet" href="styledarkmode.css">
     <link rel="icon" href="code-solid.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -46,7 +46,7 @@
     <h4 style="margin-left:1.5%;">Terminal</h4>
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
-        <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
+        <button id="run" onclick="run()" class="btn-runpg">▶ RUN CODE</button>
     </div>
 
     <script type="text/javascript" src=function.js></script>
