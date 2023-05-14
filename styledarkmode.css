@@ -35,7 +35,7 @@ body.dark-mode .code-editor {
     display: flex;
     flex-direction: column;
     padding-right: 10px;
-    color: #999;
+    color: #777777;
 }
 
 /* Dark Mode */
@@ -47,6 +47,7 @@ body.dark-mode .line-numbers {
     margin-bottom: 1px;
     margin-left: 5px;
     font-size: 1.3em;
+    color: #777777;
     overflow-wrap: break-word;
 }
 
@@ -150,8 +151,8 @@ body.dark-mode #input {
     color: #eee;
 }
 #input {
-    margin-left: 1.5%;
-    width: 47.5%;
+    margin-left: 29%;
+    width: 34.5%;
     font-size: 1.3em;
     border: none;
     resize: none;
@@ -162,17 +163,31 @@ body.dark-mode #input {
     align-items: center;
     justify-content: space-between;
 }
-.btn-run {
-    margin-right: 5%;
+.btn-run, .btn-sub, .btn-runpg {
+    /* margin-right: -20%; */
     height: fit-content;
     background-color: #2AA5F0;
     color: aliceblue;
     font-weight: bold;
-    box-shadow: 0 0 11px rgba(22, 181, 255, 0.2); 
+    box-shadow: 0 0 20px rgba(22, 181, 255, 0.2); 
     font-size: 1em;
     padding: 10px 30px;
     border-radius: 10px;
     border: none;
+}
+.btn-runpg {
+    margin-right: 5%;
+}
+
+.btn-run {
+    margin-right: -5%;
+}
+
+.btn-sub {
+    margin-right: 5%;
+    background-color: #28d375;
+    color: aliceblue;
+    box-shadow: 0 0 20px rgba(22, 255, 138, 0.2); 
 }
 .dark-mode #dark-mode-toggle .fa-sun {
     display: none;
@@ -192,4 +207,38 @@ body.dark-mode #input {
     right: 0;
     bottom: 0;
     left: 0;
+}
+.code-act {
+    width: 40%;
+    resize: horizontal;
+    margin: 0 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark-mode .code-act{
+    background-color: #111;
+    color: #eee;
+}
+
+#activity {
+    background-color: #dbd9d9;
+    margin-left: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 95%;
+}
+
+body.dark-mode #activity {
+    background-color: #111;
+    color: #eee;
+}
+
+
+.act-p {
+    margin-left:10px;
+}
+
+body.dark-mode #activity {
+    background-color: #111;
+    color: #eee;
 }
