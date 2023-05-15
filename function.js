@@ -44,7 +44,6 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
                     }
                     else {
                         var output = [decode(data["compile_output"]), decode(data["stdout"])].join("\n").trim();
-                        // $("#output").val(`${data["status"]["id"] != "3" ? "🔴" : "🟢"} ${data["status"]["description"]}\n${output}`);
                         $("#output").val(`${output}`);
                         $("#run").prop("disabled", false);
                     }
