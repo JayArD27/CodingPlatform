@@ -3,7 +3,7 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coddie - Code Activity</title>
+    <title>Coddie - Create Code Activity</title>
     <link rel="stylesheet" href="styledarkmode.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="code-solid.svg">
@@ -13,7 +13,7 @@
     <nav class="nav-header">
         <div class="logo">
             <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
-            <h1>CODDIE - CODE PLAYGROUND</h1>
+            <h1>CODDIE - CREATE CODE ACTIVITY</h1>
         </div>
         <!-- <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
@@ -46,7 +46,9 @@
                     <p class="act-p">Title:</p>
                     <input type="text" class="act-p" style="width: 95%; height:5%;">
                     <p class="act-p">Instruction:</p>
-                    <textarea class="act-p act-p-text" ></textarea>
+                    <textarea class="act-p act-p-text" placeholder="Create code instructions here..."></textarea>
+                    <p class="act-p">Score:</p>
+                    <input type="number" class="act-p" style="width: 95%; height:5%;" min=1 >
                 </div>
             <div class="code-editor">
                 <div class="line-numbers" id="line-numbers"></div>
