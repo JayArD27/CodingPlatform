@@ -43,7 +43,7 @@
     <!-- OUTPUT PANEL -->
     <textarea readonly id="output"></textarea>
     </div>
-    <h4 style="margin-left:1.5%;">Terminal</h4>
+    <h4 style="margin-left:30%;">Terminal</h4>
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
         <button id="run" onclick="run()" class="btn-runpg">▶ RUN CODE</button>
