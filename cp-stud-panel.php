@@ -13,11 +13,12 @@
     <nav class="nav-header">
         <div class="logo">
             <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
-            <h1>CODDIE - CODE PLAYGROUND</h1>
+            <h1>CODDIE - CODE ACTIVITY</h1>
         </div>
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
         <p>Status: Incomplete</p>
+        <p>Score: 0/10</p>
         <button id="dark-mode-toggle">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
