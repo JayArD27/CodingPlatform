@@ -43,6 +43,7 @@
     <!-- CODE EDITOR -->
     <div class=editor-out>
         <div class="code-act">
+            <p class="act-p"></p>
             <p class="act-p">Instructions:</p>
             <p></p>
             <P class="act-p">Expected Output:</P>
