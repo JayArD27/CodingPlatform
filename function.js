@@ -116,10 +116,10 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
 
         codeEditor.addEventListener('input', updateLineNumbers);
 
-        // Initial line numbers update
+        // pang call ng update ng lines
         updateLineNumbers();
 
-
+// For darkmode and shits
         const body = document.querySelector('body');
         const darkModeToggle = document.getElementById('dark-mode-toggle');
 
@@ -127,3 +127,25 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
             body.classList.toggle('dark-mode');
             darkModeToggle.classList.toggle('light-mode');
         });
+
+
+        // para #output for inserting sa databse
+        function insertDataToDatabase(data) {
+            $.ajax({
+              url: "insertact.php",
+              type: "POST",
+              data: {
+                outputData: data
+              },
+              success: function(response) {
+                console.log(response);
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log("Error:", errorThrown);
+              }
+            });
+          }
+        
+          var outputData = $("#output").val();
+          insertDataToDatabase(outputData);
+          
