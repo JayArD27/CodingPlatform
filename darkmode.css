@@ -1,0 +1,51 @@
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #eee;
+}
+/* Dark Mode */
+body.dark-mode .code-editor {
+    background-color: #222;
+    color: #eee;
+}
+/* Dark Mode */
+body.dark-mode .line-numbers {
+    color: #888;
+}
+/* Dark Mode */
+body.dark-mode .line-number {
+    color: #aaa;
+}
+/* Dark Mode */
+body.dark-mode #source {
+    background-color: #111;
+    color: #eee;
+}
+body.dark-mode .fa-moon {
+   color: aliceblue;
+}
+/* Dark Mode */
+body.dark-mode .nav-header {
+    background-color: #111;
+    color: #2AA5F0;
+}
+body.dark-mode #output {
+    background-color: #111;
+    color: #eee;
+}
+body.dark-mode #input {
+    background-color: #111;
+    color: #eee;
+}
+body.dark-mode .code-act{
+    background-color: #111;
+    color: #eee;
+}
+body.dark-mode #activity {
+    background-color: #111;
+    color: #eee;
+}
+body.dark-mode #activity {
+    background-color: #111;
+    color: #eee;
+}
