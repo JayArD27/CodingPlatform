@@ -102,7 +102,7 @@ body.dark-mode .fa-moon {
 
 .logo {
     display: flex;
-    width: 50%;
+    width: 40%;
     gap: 10px;
     margin-left: 5%;
 }
@@ -240,7 +240,7 @@ body.dark-mode #activity {
 
 .act-p-text {
     width: 95%;
-    height: 60%;
+    height: 40%;
 }
 
 body.dark-mode #activity {
