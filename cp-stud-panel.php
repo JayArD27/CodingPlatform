@@ -41,13 +41,26 @@
         <h4>Output<sub></sub></h4>
     </div>
     <!-- CODE EDITOR -->
+    <?php
+    include 'dbconnect.php';
+    if (isset($_GET['id'])) {
+        $rowId = $_GET['id'];
+        $query = "SELECT * FROM tbl_codeact WHERE ACT_ID = $rowId";
+        $result = mysqli_query($conn, $query);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
+
+
+
     <div class=editor-out>
         <div class="code-act">
-            <p class="act-p"></p>
+            <p class="act-p"><?php echo $row["TITLE"];?></p>
+            <sub class="act-p">BY:<?php echo $row["TEACHER"];?></sub>
             <p class="act-p">Instructions:</p>
-            <p></p>
+            <p class="act-p act-inst"><?php echo $row["ACT_DESC"];?></p>
             <P class="act-p">Expected Output:</P>
-            <textarea id="activity" readonly></textarea>
+            <textarea id="activity" readonly><?php echo $row["OUTPUT"];?></textarea>
         </div>
         <div class="code-editor">
             <div class="line-numbers" id="line-numbers"></div>
@@ -62,7 +75,11 @@
         <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
         <button  id="submit" class="btn-sub">&#9660 SUBMIT CODE</button>
     </div>
-
+    <?php } ?>
+    <?php        
+        }
+    }
+        ?>
     <script type="text/javascript" src=function.js></script>
 </body>
 </html>
