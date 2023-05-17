@@ -1,3 +1,12 @@
+<?php
+    include 'dbconnect.php';
+    if (isset($_GET['id'])) {
+        $rowId = $_GET['id'];
+        $query = "SELECT * FROM tbl_codeact WHERE ACT_ID = $rowId";
+        $result = mysqli_query($conn, $query);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +26,9 @@
         </div>
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
-        <p>Status: Incomplete</p>
-        <p>Score: 0/10</p>
+        <!-- <p>Status: Incomplete</p> -->
+        <p id="match-message">Status:</p>
+        <p>Score: 0/<?php echo $row["SCORE"];?></p>
         <button id="dark-mode-toggle">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
@@ -41,17 +51,6 @@
         <h4>Output<sub></sub></h4>
     </div>
     <!-- CODE EDITOR -->
-    <?php
-    include 'dbconnect.php';
-    if (isset($_GET['id'])) {
-        $rowId = $_GET['id'];
-        $query = "SELECT * FROM tbl_codeact WHERE ACT_ID = $rowId";
-        $result = mysqli_query($conn, $query);
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-        ?>
-
-
 
     <div class=editor-out>
         <div class="code-act">
@@ -73,8 +72,9 @@
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
         <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
-        <button  id="submit" class="btn-sub">&#9660 SUBMIT CODE</button>
+        <button id="submit" onclick="compareTexts()" class="btn-sub">&#9660 SUBMIT CODE</button>
     </div>
+
     <?php } ?>
     <?php        
         }
