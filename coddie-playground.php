@@ -18,7 +18,7 @@
         <textarea id="source" placeholder="Write your code here..."></textarea>
     </div>
 
-</textarea>
+<!-- </textarea> -->
 
     <h4>Language</h4>
     <select id="lang">
