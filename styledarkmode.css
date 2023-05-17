@@ -1,7 +1,7 @@
 @import url(darkmode.css);
-* {
+/* * {
     outline: red solid 1px;
-} 
+}  */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #eeee;
@@ -181,6 +181,7 @@ body {
     border: none;
     border-radius: 10px;
     width: 95%;
+    padding: 1%;
 }
 
 .act-p {
@@ -196,4 +197,40 @@ body {
     position: absolute;
     margin-left: 71%;
     margin-top: -5%;
+}
+
+.act {
+    background-color: #28d375;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 25%;
+}
+
+.act-section {
+    /* background-color: #d6d6d6;   */
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.btn-scoreact {
+    display: flex;
+    margin: 0 3%;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.act-desc {
+    margin: 0 3%;
+    margin-bottom: 3%;
+}
+
+.act-inst {
+    border: .2px solid;
+    margin-right: 1.5%;
+    padding: 1%;
+    border-radius: 10px;
 }
