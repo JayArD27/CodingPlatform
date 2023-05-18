@@ -1,4 +1,5 @@
-API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020"; 
+// API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020"; first api key
+API_KEY = "e01be1869fmsh2f577d9db5ce0d8p1d2a1bjsnb7fc982e1328"; 
 
         var language_to_id = {
             "C": 50,
@@ -78,6 +79,9 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
                 success: function(data, textStatus, jqXHR) {
                     $("#output").val($("#output").val() + "\nCOMPILED!.");
                     setTimeout(function() { check(data["token"]) }, 2000);
+
+                    // location.reload();
+                    // compareTexts();
                 },
                 error: errorHandler
             });
@@ -148,4 +152,24 @@ API_KEY = "a2dbe82b80msh417d8d09a4433c5p18c0d2jsn19afa582b020";
         
           var outputData = $("#output").val();
           insertDataToDatabase(outputData);
+
+          function compareTexts() {
+
+            
+            var activityText = $("#activity").val().trim();
+            var outputText = $("#output").val().trim();
+            var scoretText = $("#score").val().trim();
+            
+              if (activityText === outputText) {
+                  $("#match-message").text("COMPLETE");
+                  $("#score-message").text(scoretText);
+                  // console.log("same")
+              } else {
+                  $("#match-message").text("INCOMPLETE");
+                //   $("#score-message").text(scoretText);
+                  // console.log("not same")
+              }
+          }
           
+
+
