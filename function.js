@@ -154,18 +154,16 @@ API_KEY = "e01be1869fmsh2f577d9db5ce0d8p1d2a1bjsnb7fc982e1328";
           insertDataToDatabase(outputData);
 
           function compareTexts() {
-
-            
             var activityText = $("#activity").val().trim();
             var outputText = $("#output").val().trim();
             var scoretText = $("#score").val().trim();
             
               if (activityText === outputText) {
-                  $("#match-message").text("COMPLETE");
+                  $("#match-message").text("COMPLETED").css("background-color", "#28d375");
                   $("#score-message").text(scoretText);
                   // console.log("same")
               } else {
-                  $("#match-message").text("INCOMPLETE");
+                  $("#match-message").text("INCOMPLETE").css("background-color", "red");
                 //   $("#score-message").text(scoretText);
                   // console.log("not same")
               }
