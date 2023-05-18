@@ -34,7 +34,8 @@
         <h1 style="margin-left:25%;">ACTIVITY</h1>
         <a href="playground.php" class="playground"><i class="fa-solid fa-code"></i> CODE PLAYGROUND</a>
     </div>
-    <hr style="margin:0 25%">
+    <hr style="margin:0 25%; margin-bottom: 1%;">
+    <a href="cp-instructor-panel.php" class="create-act">+ Create Activity</a>
     <?php
         include 'dbconnect.php';
         $query = "SELECT * FROM tbl_codeact";
@@ -50,7 +51,7 @@
             </div>
             <div class="btn-scoreact">
                 <h3>SCORE: <?php echo $row["SCORE"];?></h3>
-                <a href='cp-stud-panel.php?id=<?php echo $row["ACT_ID"]; ?>' class="take-act">TAKE ACTIVITY</a>
+                <a href='?id=<?php echo $row["ACT_ID"]; ?>' class="take-act">DETAILS</a>
             </div>
         </div>
 
