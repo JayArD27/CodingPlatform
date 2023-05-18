@@ -1,3 +1,4 @@
+
 <?php
 if (isset($_POST['compare'])) {
     $text1 = $_POST['textarea1'];
