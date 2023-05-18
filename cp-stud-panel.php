@@ -11,6 +11,7 @@
 <html lang="en">
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coddie - Code Activity</title>
     <link rel="stylesheet" href="styledarkmode.css">
@@ -27,8 +28,8 @@
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
         <!-- <p>Status: Incomplete</p> -->
-        <p>Status: <p id="match-message"></p></p>
-        <p>Score: <p id="score-message">0</p>/ <textarea id="score"><?php echo $row['SCORE'];?></textarea></p>
+        <p>Status: <p id="match-message">INCOMPLETE</p></p>
+        <p>Score: <p id="score-message">0</p>/ <textarea id="score" readonly><?php echo $row['SCORE'];?></textarea></p>
         <button id="dark-mode-toggle">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
@@ -54,8 +55,8 @@
 
     <div class=editor-out>
         <div class="code-act">
-            <p class="act-p"><?php echo $row["TITLE"];?></p>
-            <sub class="act-p">BY:<?php echo $row["TEACHER"];?></sub>
+            <p class="act-p act-title"><?php echo $row["TITLE"];?></p>
+            <sub class="act-p act-teacher">BY:<?php echo $row["TEACHER"];?></sub>
             <p class="act-p">Instructions:</p>
             <p class="act-p act-inst"><?php echo $row["ACT_DESC"];?></p>
             <P class="act-p">Expected Output:</P>
