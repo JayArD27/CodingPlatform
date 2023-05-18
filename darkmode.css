@@ -21,7 +21,7 @@ body.dark-mode #source {
     background-color: #111;
     color: #eee;
 }
-body.dark-mode .fa-moon {
+body.dark-mode .fa-sun {
    color: aliceblue;
 }
 /* Dark Mode */
@@ -47,5 +47,19 @@ body.dark-mode #activity {
 }
 body.dark-mode #activity {
     background-color: #111;
+    color: #eee;
+}
+body.dark-mode #score {
+    /* background-color: #111; */
+    color: #2AA5F0;
+}
+
+body.dark-mode .playground {
+    /* background-color: #111; */
+    color: #eee;
+}
+
+body.dark-mode .create-act {
+    /* background-color: #111; */
     color: #eee;
 }
