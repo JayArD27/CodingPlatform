@@ -27,8 +27,8 @@
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
         <!-- <p>Status: Incomplete</p> -->
-        <p id="match-message">Status:</p>
-        <p>Score: 0/<?php echo $row["SCORE"];?></p>
+        <p>Status: <p id="match-message"></p></p>
+        <p>Score: <p id="score-message">0</p>/ <textarea id="score"><?php echo $row['SCORE'];?></textarea></p>
         <button id="dark-mode-toggle">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
@@ -72,7 +72,7 @@
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
         <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
-        <button id="submit" onclick="compareTexts()" class="btn-sub">&#9660 SUBMIT CODE</button>
+        <button id="submit" onclick="compareTexts()" class="btn-sub">✔ CHECK CODE</button>
     </div>
 
     <?php } ?>
