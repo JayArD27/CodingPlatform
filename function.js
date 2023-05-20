@@ -79,9 +79,6 @@ API_KEY = "e01be1869fmsh2f577d9db5ce0d8p1d2a1bjsnb7fc982e1328";
                 success: function(data, textStatus, jqXHR) {
                     $("#output").val($("#output").val() + "\nCOMPILED!.");
                     setTimeout(function() { check(data["token"]) }, 2000);
-
-                    // location.reload();
-                    // compareTexts();
                 },
                 error: errorHandler
             });
@@ -134,40 +131,72 @@ API_KEY = "e01be1869fmsh2f577d9db5ce0d8p1d2a1bjsnb7fc982e1328";
 
 
         // para #output for inserting sa databse
-        function insertDataToDatabase(data) {
+        function insertDataToDatabase(data, url) {
+          $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+              outputData: data
+            },
+            success: function(response) {
+              console.log(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log("Error:", errorThrown);
+            }
+          });
+        }
+        
+        var outputData = $("#output").val();
+        var url1 = "insertact.php";
+        var url2 = "submitact.php";
+        
+        insertDataToDatabase(outputData, url1);
+        insertDataToDatabase(outputData, url2); 
+
+        $(document).ready(function() {
+          $("#compare-button").click(function() {
+            var activityText = $("#activity").val().trim();
+            var outputText = $("#output").val().trim();
+            var scoreText = $("#score").val().trim();
+            
+            if (activityText === outputText) {
+              $("#match-message").text("COMPLETE").css("background-color", "#28d375");
+              $("#score-message").text(scoreText);
+              var matchMessage = "COMPLETE"; 
+            } else {
+              $("#match-message").text("INCOMPLETE").css("background-color", "red");
+              var matchMessage = "INCOMPLETE"; 
+            }
+            
+            var scoreMessage = $("#score-message").text().trim(); 
             $.ajax({
-              url: "insertact.php",
+              url: "insert.php", 
               type: "POST",
               data: {
-                outputData: data
+                matchMessage: matchMessage,
+                scoreMessage: scoreMessage
               },
               success: function(response) {
-                console.log(response);
+                console.log(response); 
               },
               error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Error:", errorThrown);
               }
             });
-          }
+          });
+        });
         
-          var outputData = $("#output").val();
-          insertDataToDatabase(outputData);
 
-          function compareTexts() {
-            var activityText = $("#activity").val().trim();
-            var outputText = $("#output").val().trim();
-            var scoretText = $("#score").val().trim();
-            
-              if (activityText === outputText) {
-                  $("#match-message").text("COMPLETED").css("background-color", "#28d375");
-                  $("#score-message").text(scoretText);
-                  // console.log("same")
-              } else {
-                  $("#match-message").text("INCOMPLETE").css("background-color", "red");
-                //   $("#score-message").text(scoretText);
-                  // console.log("not same")
-              }
-          }
+
+          const today = new Date().toISOString().split('T')[0];
+          const dateInput = document.getElementById('myDateInput');
           
-
-
+          dateInput.addEventListener('input', function() {
+            const selectedDate = new Date(this.value);
+            const currentDate = new Date(today);
+          
+            if (selectedDate < currentDate) {
+              this.value = today;
+            }
+          });
