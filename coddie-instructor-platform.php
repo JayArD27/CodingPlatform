@@ -3,7 +3,7 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coddie - Coding Platform</title>
+    <title>Coddie - Coding Platform | TEACHER</title>
     <link rel="stylesheet" href="styledarkmode.css">
     <link rel="icon" href="code-solid.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -46,7 +46,8 @@
 
         <div class="act">
             <div class="act-desc">
-                <h3><?php echo $row["TITLE"];?></h3>
+                <h3 style="margin-bottom: 2%;"><?php echo $row["TITLE"];?></h3>
+                <h6 style="margin-top: -2%;">DUE DATE: <?php $dueDate = new DateTime($row["DUE_DATE"]);$formattedDate = $dueDate->format('F j, Y  g:i A');echo $formattedDate;?></h6>
                 <sub>BY: <?php echo $row["TEACHER"];?></sub>
             </div>
             <div class="btn-scoreact">
@@ -54,8 +55,6 @@
                 <a href='?id=<?php echo $row["ACT_ID"]; ?>' class="take-act">DETAILS</a>
             </div>
         </div>
-
-        
         <?php 
             }
         } else {
