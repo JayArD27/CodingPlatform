@@ -24,16 +24,22 @@
         <div class="logo">
             <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
             <h1>CODDIE - CODE ACTIVITY</h1>
+            <button id="dark-mode-toggle">
+            <i class="fas fa-sun"></i> 
+            <i class="fas fa-moon"></i>
+            </button>
         </div>
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <p>Elapsed Time: 10:00:12</p>
         <!-- <p>Status: Incomplete</p> -->
-        <p>Status: <p id="match-message">INCOMPLETE</p></p>
-        <p>Score: <p id="score-message">0</p>/ <textarea id="score" readonly><?php echo $row['SCORE'];?></textarea></p>
-        <button id="dark-mode-toggle">
-            <i class="fas fa-sun"></i> 
-            <i class="fas fa-moon"></i>
-        </button>
+        <!-- <p id="match-message">INCOMPLETE</p>
+                <p id="score-message">0</p>
+    --> 
+    <form method="post">
+        <div class="div-scorestat">
+            <p class="p-score">Status: <textarea name="act-stat" id="match-message">INCOMPLETE</textarea> </p>
+            <p class="p-score" style="margin-right:10%;">Score: <textarea name="act-score" id="score-message" >0</textarea>/ <textarea id="score" readonly><?php echo $row['SCORE'];?></textarea></p>
+        </div>
     </nav>
     <div class="header-sub">
         <h4>Activity</h4>
@@ -64,21 +70,25 @@
         </div>
         <div class="code-editor">
             <div class="line-numbers" id="line-numbers"></div>
-            <textarea id="source" placeholder="Write your code here..." rows="15"></textarea>
+            <textarea id="source" placeholder="Write your code here..." rows="15" name="act-code"></textarea>
         </div>
     <!-- OUTPUT PANEL -->
-    <textarea readonly id="output"></textarea>
+    <textarea readonly id="output" name="output-code"></textarea>
     </div>
     <h4 style="margin-left:30%;">Terminal</h4>
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
-        <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
-        <button id="submit" onclick="compareTexts()" class="btn-sub">✔ CHECK CODE</button>
+        <button id="submit-button" name="sub-act" class="btn-subcode">📂 SUBMIT CODE</button>
     </div>
-
+    </form>
+    <div class="run-sub">
+    <button id="compare-button" class="btn-sub" name="sub-act">✔ CHECK CODE</button>
+    <button id="run" onclick="run()" class="btn-run">▶ RUN CODE</button>
+    </div>
     <?php } ?>
     <?php        
         }
+        include "submitact.php";
     }
         ?>
     <script type="text/javascript" src=function.js></script>
