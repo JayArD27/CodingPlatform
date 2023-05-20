@@ -1,7 +1,7 @@
 @import url(darkmode.css);
 /* * {
     outline: red solid 1px;
-}  */
+}   */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #eeee;
@@ -55,6 +55,7 @@ body {
 
 #dark-mode-toggle {
     margin-right: 5%;
+    margin-top: 2.5%;
     background-color: transparent;
     border: none;
     width: 40px;
@@ -120,7 +121,7 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.btn-run, .btn-sub, .btn-runpg {
+.btn-run, .btn-sub, .btn-runpg, .btn-subcode {
     /* margin-right: -20%; */
     height: fit-content;
     background-color: #2AA5F0;
@@ -144,6 +145,16 @@ body {
 .btn-sub {
     margin-right: 5%;
     background-color: #28d375;
+    color: aliceblue;
+    box-shadow: 0 0 20px rgba(22, 255, 138, 0.2); 
+}
+
+.btn-subcode {
+    margin-right: 6.5%;
+    width: 23.5%;
+    margin-top: 2%;
+    /* background: linear-gradient(290.7deg, rgb(133, 255, 159) 2.3%, rgb(0, 172, 249) 100.2%); */
+    background-color: rgb(255, 205, 68);
     color: aliceblue;
     box-shadow: 0 0 20px rgba(22, 255, 138, 0.2); 
 }
@@ -245,9 +256,17 @@ body {
     padding: .3%;
     border-radius: 10px;
     font-weight: bold;
-    margin-left: -1%;
+    margin-left: 5%;
+    width: 100px;
+    height: 20px;
+    resize: none;
+    border: none;
+    text-align: center;
+    padding: 3%;
+    font-size: .9rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
-#score {
+#score, #score-message {
     width: 35px;
     height: 20px;
     display: flex;
@@ -334,4 +353,29 @@ body {
 .create-act:hover {
     border: 1px dashed;
     border-radius: 10px;
+}
+
+.div-scoredate {
+    display: flex;
+}
+
+.run-sub {
+    margin-top: -8%;
+    margin-left: 70%;
+}
+
+.div-scorestat {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.p-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dm-panel {
+    margin-top: -5%;
 }
