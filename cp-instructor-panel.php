@@ -21,7 +21,7 @@
         <p><b>LAST NAME, FIRSTNAME</b></p>
         <!-- <p>Elapsed Time: 10:00:12</p>
         <p>Status: Incomplete</p> -->
-        <button id="dark-mode-toggle">
+        <button id="dark-mode-toggle" class="dm-panel">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
         </button>
@@ -47,15 +47,23 @@
         <div class=editor-out>
                 <div class="code-act-inst">
                     <p class="act-p" for="act-title">Title:</p>
-                    <input type="text" class="act-p" style="width: 95%; height:5%;" name="act-title">
+                    <input type="text" class="act-p" style="width: 95%; height:5%;" name="act-title" required>
                     <p class="act-p" for="act-desc">Instruction:</p>
-                    <textarea class="act-p act-p-text" placeholder="Create code instructions here..." name="act-desc"></textarea>
-                    <p class="act-p" for="act-score">Score:</p>
-                    <input type="number" class="act-p" style="width: 95%; height:5%;" min=1 name="act-score">
+                    <textarea class="act-p act-p-text" placeholder="Create code instructions here..." name="act-desc" required></textarea>
+                    <div class="div-scoredate">
+                        <div>
+                            <p class="act-p" for="act-score">Score:</p>
+                            <input type="number" class="act-p" style="width: 60%; height:20%;" min=1 name="act-score" required>
+                        </div>
+                        <div>
+                            <p>Due Date:</p>
+                            <input type="datetime-local" id="myDateInput" name="act-due" required>
+                        </div>
+                    </div>
                 </div>
             <div class="code-editor">
                 <div class="line-numbers" id="line-numbers"></div>
-                <textarea id="source" placeholder="Write your code here..." rows="15" name="act-code"></textarea>
+                <textarea id="source" placeholder="Write your code here..." rows="15" name="act-code" required></textarea>
             </div>
         <!-- OUTPUT PANEL -->
         <textarea readonly id="output" name="output-code"></textarea>
