@@ -3,7 +3,7 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Compiler</title>
+    <title>Coddie Playground</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="code-solid.svg">
 </head>

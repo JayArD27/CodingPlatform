@@ -11,7 +11,7 @@
 <body>
     <nav class="nav-header">
         <div class="logo">
-            <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
+            <a href="panel.html"><img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow"></a>
             <h1>CODDIE - CODING PLATFORM</h1>
         </div>
 
