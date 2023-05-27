@@ -37,8 +37,8 @@
     --> 
     <form method="post">
         <div class="div-scorestat">
-            <p class="p-score">Status: <textarea name="act-stat" id="match-message">INCOMPLETE</textarea> </p>
-            <p class="p-score" style="margin-right:10%;">Score: <textarea name="act-score" id="score-message" >0</textarea>/ <textarea id="score" readonly><?php echo $row['SCORE'];?></textarea></p>
+            <p class="p-score">Status: <textarea name="act-stat" id="match-message" readonly>INCOMPLETE</textarea> </p>
+            <p class="p-score" style="margin-right:10%;">Score: <textarea name="act-score" id="score-message" readonly>0</textarea>/ <textarea id="score" readonly><?php echo $row['SCORE'];?></textarea></p>
         </div>
     </nav>
     <div class="header-sub">
