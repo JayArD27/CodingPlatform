@@ -13,12 +13,12 @@
         <div class="logo">
             <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
             <h1>CODDIE - CODING PLATFORM</h1>
+            <button id="dark-mode-toggle">
+                <i class="fas fa-sun"></i> 
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
 
-        <button id="dark-mode-toggle">
-            <i class="fas fa-sun"></i> 
-            <i class="fas fa-moon"></i>
-        </button>
         <script>        
             const body = document.querySelector('body');
             const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -46,7 +46,7 @@
         <div class="act">
             <div class="act-desc">
             <h3 style="margin-bottom: 2%;"><?php echo $row["TITLE"];?></h3>
-                <h6 style="margin-top: -2%;">DUE DATE: <?php $dueDate = new DateTime($row["DUE_DATE"]);$formattedDate = $dueDate->format('F j, Y  g:i A');echo $formattedDate;?></h6>
+                <h6 style="margin-top: -2%;">DEADLINE: <?php $dueDate = new DateTime($row["DUE_DATE"]);$formattedDate = $dueDate->format('F j, Y  g:i A');echo $formattedDate;?></h6>
                 <sub>BY: <?php echo $row["TEACHER"];?></sub>
             </div>
             <div class="btn-scoreact">

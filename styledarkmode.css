@@ -107,8 +107,14 @@ body {
     font-size: 1.3em;
     resize: none;
 }
+.note-input {
+    display:flex;
+    gap: 420px;
+    margin-left: 1.5%;
+}
 
-#input {
+
+#input, .txtnote, #input-stud {
     margin-left: 29%;
     width: 34.5%;
     font-size: 1.3em;
@@ -116,6 +122,25 @@ body {
     resize: none;
     height: 120px;
 }
+.notepanel {
+    width: 27%;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-left: 7px;
+}
+.txtnote {
+    width: 98%;
+    border:rgb(49, 49, 49) solid 1px;
+}
+/* 
+#input-stud {
+    margin-left: 29%;
+} */
+ /* #input {
+    margin-left: -15%;
+ } */
+
 .input-panel {
     display: flex;
     align-items: center;
@@ -142,6 +167,12 @@ body {
     margin-right: -5%;
 }
 
+.btn-run-teacher {
+    margin-top: 50%;
+}
+#run {
+    margin-top: -3.5%;
+}
 .btn-sub {
     margin-right: 5%;
     background-color: #28d375;
@@ -149,14 +180,32 @@ body {
     box-shadow: 0 0 20px rgba(22, 255, 138, 0.2); 
 }
 
+
 .btn-subcode {
     margin-right: 6.5%;
     width: 23.5%;
-    margin-top: 2%;
+    margin-top: 1%;
     /* background: linear-gradient(290.7deg, rgb(133, 255, 159) 2.3%, rgb(0, 172, 249) 100.2%); */
     background-color: rgb(255, 205, 68);
     color: aliceblue;
     box-shadow: 0 0 20px rgba(22, 255, 138, 0.2); 
+}
+
+.btn-addact {
+    margin-top: 3%;
+}
+
+
+#timer {
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    color: rgb(255, 255, 255);
+    resize: none;
+    display: flex;
+    margin-left: -5%;
+    width: 100px;
+    height: 20px;
 }
 
 .dark-mode #dark-mode-toggle .fa-moon {
@@ -205,6 +254,11 @@ body {
     height: 40%;
 }
 
+.act-p-req {
+    width: 95%;
+    height: 5%;
+}
+
 .btn-run-act {
     position: absolute;
     margin-left: 71%;
@@ -241,6 +295,11 @@ body {
 .act-desc {
     margin: 0 3%;
     margin-bottom: 3%;
+}
+
+.act-req {
+    margin: 0 3%;
+    margin-bottom: 1%;
 }
 
 .act-inst {
@@ -291,7 +350,7 @@ body {
     color: #777777;
 }
 
-.take-act {
+.take-act, .edit-act {
     display: flex;
     justify-self: end;
     text-decoration: none;
@@ -303,7 +362,11 @@ body {
     font-weight: bold;
 }
 
-.take-act:hover {
+.edit-act {
+    background: linear-gradient(111.5deg, rgb(196, 76, 20) 0.4%, rgb(214, 136, 33) 100.2%);
+}
+
+.take-act, .edit-act:hover {
     border-radius: 0;
     text-decoration: underline;
 }
@@ -378,4 +441,10 @@ body {
 }
 .dm-panel {
     margin-top: -5%;
+}
+
+.code-view {
+    height: 50%;
+    width: 30%;
+    display:auto;
 }

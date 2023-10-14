@@ -1,3 +1,12 @@
+<?php
+    include 'dbconnect.php';
+    if (isset($_GET['id'])) {
+        $rowId = $_GET['id'];
+        $query = "SELECT * FROM tbl_codeact WHERE ACT_ID = $rowId";
+        $result = mysqli_query($conn, $query);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,24 +53,24 @@
         <div class=editor-out>
                 <div class="code-act-inst">
                     <p class="act-p" for="act-title">Title:</p>
-                    <input type="text" class="act-p" style="width: 95%; height:5%;" name="act-title" name="inputField" value="" required>
+                    <input type="text" class="act-p" style="width: 95%; height:5%;" name="act-title" name="inputField" value="<?php echo $row["TITLE"];?>" required>
                     <p class="act-p" for="act-desc">Instruction:</p>
-                    <textarea class="act-p act-p-text" placeholder="Create code instructions here..." name="act-desc" required></textarea>
-                    <textarea class="act-p act-p-req" placeholder="REQUIREMENT" name="act-req" required></textarea>
+                    <textarea class="act-p act-p-text" placeholder="Create code instructions here..." name="act-desc" value="" required><?php echo $row["ACT_DESC"];?></textarea>
+                    <textarea class="act-p act-p-req" placeholder="REQUIREMENT" name="act-req" value="" required><?php echo $row["ACT_REQ"];?></textarea>
                     <div class="div-scoredate">
                         <div>
                             <p class="act-p" for="act-score">Score:</p>
-                            <input type="number" class="act-p" style="width: 60%; height:20%;" min=1 name="act-score" required>
+                            <input type="number" class="act-p" style="width: 60%; height:20%;" min=1 name="act-score" value="<?php echo $row["SCORE"];?>" required>
                         </div>
                         <div>
                             <p>Due Date:</p>
-                            <input type="datetime-local" id="myDateInput" name="act-due" required>
+                            <input type="datetime-local" id="myDateInput" name="act-due" value="<?php echo $row["DUE_DATE"];?>" required>
                         </div>
                     </div>
                 </div>
             <div class="code-editor">
                 <div class="line-numbers" id="line-numbers"></div>
-                <textarea id="source" placeholder="Write your code here..." rows="15" name="act-code" required></textarea>
+                <textarea id="source" placeholder="Write your code here..." rows="15" name="act-code" required><?php echo $row["S_CODE"];?></textarea>
             </div>
         <!-- OUTPUT PANEL -->
         <textarea readonly id="output" name="output-code"></textarea>
@@ -77,11 +86,17 @@
             <textarea class="txtnote"></textarea>
         </div> -->
         <textarea id="input" name="input-inst" placeholder="Input here..."></textarea>
-        <button  id="add" class="btn-sub btn-addact" name="add-act" type="submit"><b>+</b> ADD ACTIVITY</button>
+        <button  id="add" class="btn-sub btn-addact" name="add-act" type="submit"><b>+</b> UPDATE</button>
     </div>
     </form>
     <button id="run" onclick="run()" class="btn-run btn-run-act btn-run-teacher">▶ RUN CODE</button>
-    <?php include "insertact.php";?>
+    <?php } ?>
+    <?php        
+        }
+        include "updateact.php";
+    }
+        ?>
+
     <script type="text/javascript" src=function.js></script>
 </body>
 </html>

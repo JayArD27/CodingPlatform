@@ -13,11 +13,12 @@
         <div class="logo">
             <img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow">
             <h1>CODDIE - CODE PLAYGROUND</h1>
-        </div>
-        <button id="dark-mode-toggle">
+            <button id="dark-mode-toggle">
             <i class="fas fa-sun"></i> 
             <i class="fas fa-moon"></i>
         </button>
+        </div>
+
     </nav>
     <div class="header-sub">
         <h4>Source Code</h4>
@@ -25,11 +26,11 @@
         <h4>Language</h4>
             <select id="lang">
                 <option selected>C++</option>
-                <option>C</option>
+                <!-- <option>C</option>
                 <option>Java</option>
                 <option>Python</option>
                 <option>PHP</option>
-                <option>Ruby</option>
+                <option>Ruby</option> -->
             </select>
         </div>
         <h4>Output<sub></sub></h4>
@@ -43,9 +44,11 @@
     <!-- OUTPUT PANEL -->
     <textarea readonly id="output"></textarea>
     </div>
-    <h4 style="margin-left:30%;">Terminal</h4>
+    <h4 style="margin-left:30%;">Input</h4>
     <div class="input-panel">
         <textarea id="input" placeholder="Input here..."></textarea>
+        <!-- <textarea id="console" readonly></textarea>
+        <input type="text" id="input" placeholder="Enter input" /> -->
         <button id="run" onclick="run()" class="btn-runpg">▶ RUN CODE</button>
     </div>
 

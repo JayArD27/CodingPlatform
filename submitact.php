@@ -10,12 +10,13 @@
         $actcode = $_POST['act-code'];
         $matchMessage = $_POST['act-stat'];
         $scoreMessage = $_POST['act-score'];
+        $actTime = $_POST['act-timer'];
 
         $response = array('status' => 'success');
         // echo json_encode($response);
 
-        $sql = "INSERT INTO tbl_codeactresult (RES_ACT_ID, STUD_FNAME, STUD_LNAME, TIME_ELAPSE, DATE_TAKEN, SCORE, STATUS, OUTPUT, RES_CODE) VALUES 
-        ($rowId, 'JAY-AR', 'DELA RAMA', NOW(), CURRENT_TIME(),  '$scoreMessage', '$matchMessage', '$outputcode', '$actcode')";
+        $sql = "INSERT INTO tbl_codeactresult (RES_ACT_ID, STUD_FNAME, STUD_LNAME, TIME_ELAPSE, DATE_TAKEN, SCORE, STATUS, OUTPUT, RES_CODE, ACTTIME) VALUES 
+        ($rowId, 'JAY-AR', 'DELA RAMA', NOW(), CURRENT_TIME(),  '$scoreMessage', '$matchMessage', '$outputcode', '$actcode', '$actTime')";
 
         $result = $conn -> query($sql);
 

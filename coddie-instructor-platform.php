@@ -11,7 +11,7 @@
 <body>
     <nav class="nav-header">
         <div class="logo">
-            <a href="panel.html"><img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow"></a>
+            <!-- <a href="panel.html"><img src="arrow-left-solid.svg" alt="" style="width: 20px; margin-left: 1%;" style="arrow"></a> -->
             <h1>CODDIE - CODING PLATFORM</h1>
         </div>
 
@@ -47,12 +47,13 @@
         <div class="act">
             <div class="act-desc">
                 <h3 style="margin-bottom: 2%;"><?php echo $row["TITLE"];?></h3>
-                <h6 style="margin-top: -2%;">DUE DATE: <?php $dueDate = new DateTime($row["DUE_DATE"]);$formattedDate = $dueDate->format('F j, Y  g:i A');echo $formattedDate;?></h6>
+                <h6 style="margin-top: -2%;">DEADLINE: <?php $dueDate = new DateTime($row["DUE_DATE"]);$formattedDate = $dueDate->format('F j, Y  g:i A');echo $formattedDate;?></h6>
                 <sub>BY: <?php echo $row["TEACHER"];?></sub>
             </div>
             <div class="btn-scoreact">
                 <h3>SCORE: <?php echo $row["SCORE"];?></h3>
-                <a href='?id=<?php echo $row["ACT_ID"]; ?>' class="take-act">DETAILS</a>
+                <a href='cp-instructor-panelupdate.php?id=<?php echo $row["ACT_ID"]; ?>' class="edit-act">EDIT</a>
+                <a href='table.php?id=<?php echo $row["ACT_ID"]; ?>' class="take-act">DETAILS</a>
             </div>
         </div>
         <?php 

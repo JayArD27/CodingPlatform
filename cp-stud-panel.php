@@ -30,7 +30,7 @@
             </button>
         </div>
         <p><b>LAST NAME, FIRSTNAME</b></p>
-        <p>Elapsed Time: 10:00:12</p>
+        Time Elapse: <textarea name="act-timer" id="timer">00:00:00</textarea>
         <!-- <p>Status: Incomplete</p> -->
         <!-- <p id="match-message">INCOMPLETE</p>
                 <p id="score-message">0</p>
@@ -65,6 +65,8 @@
             <sub class="act-p act-teacher">BY:<?php echo $row["TEACHER"];?></sub>
             <p class="act-p">Instructions:</p>
             <p class="act-p act-inst"><?php echo $row["ACT_DESC"];?></p>
+            <p class="act-p">Requirements:</p>
+            <p class="act-p act-inst"><?php echo $row["ACT_REQ"];?></p>
             <P class="act-p">Expected Output:</P>
             <textarea id="activity" readonly><?php echo $row["OUTPUT"];?></textarea>
         </div>
@@ -75,9 +77,9 @@
     <!-- OUTPUT PANEL -->
     <textarea readonly id="output" name="output-code"></textarea>
     </div>
-    <h4 style="margin-left:30%;">Terminal</h4>
+    <h4 style="margin-left:30%;">Input</h4>
     <div class="input-panel">
-        <textarea id="input" placeholder="Input here..."></textarea>
+        <textarea id="input" name="input-stud" placeholder="Input here..."></textarea>
         <button id="submit-button" name="sub-act" class="btn-subcode">📂 SUBMIT CODE</button>
     </div>
     </form>
@@ -92,5 +94,40 @@
     }
         ?>
     <script type="text/javascript" src=function.js></script>
+    <script>
+          //TIMER
+
+          let seconds = 0;
+          let minutes = 0;
+          let hours = 0;
+
+          // Function to update the timer
+          function updateTimer() {
+            seconds++;
+            if (seconds === 60) {
+              seconds = 0;
+              minutes++;
+              if (minutes === 60) {
+                minutes = 0;
+                hours++;
+              }
+            }
+            
+            // Format the timer value as HH:MM:SS
+            let formattedTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+            
+            // Update the timer element
+            document.getElementById("timer").innerText = formattedTime;
+          }
+
+          // Helper function to add leading zeros to numbers less than 10
+          function padZero(number) {
+            return number < 10 ? `0${number}` : number;
+          }
+
+          // Start the timer
+          setInterval(updateTimer, 1000); // Update every second
+</script>
+
 </body>
 </html>
